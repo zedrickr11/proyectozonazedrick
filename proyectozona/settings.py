@@ -25,7 +25,7 @@ SECRET_KEY = 'jlh%4-!l!h1j+_k&(3@^gt^8l)t1z6&4=1txz86%9s#fo=$gap'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', ' . pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'proyectofinalzonazedrickr.pythonanywhere.com']
 
 
 # Application definition
