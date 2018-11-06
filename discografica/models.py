@@ -24,7 +24,6 @@ class Album(models.Model):
     fecha_creacion = models.DateField(blank=True, null=True)
     fecha_publicacion = models.DateField(blank=True, null=True)
     duracion = models.CharField(max_length=30)
-    portada  =  models.ImageField(upload_to='photos', blank=True, null=True)
 
     def __str__(self):
         return self.nombre

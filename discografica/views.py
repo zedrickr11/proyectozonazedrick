@@ -110,7 +110,6 @@ def album_new(request):
         if form.is_valid():
             album = form.save(commit=False)
             album.autor = request.user
-            album.portada=form.cleaned_data['portada']
             album.fecha_creacion = timezone.now()
             album.save()
             return redirect('album_index')
@@ -127,7 +126,6 @@ def album_edit(request, pk):
         if form.is_valid():
             album = form.save(commit=False)
             album.autor = request.user
-            album.portada=form.cleaned_data['portada']
             album.save()
             return redirect('album_index')
     else:

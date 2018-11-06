@@ -41,7 +41,7 @@ class AlbumForm(forms.ModelForm):
 
     class Meta:
         model = Album
-        fields = ('nombre',  'Artista','Genero', 'fecha_publicacion','duracion','portada',)
+        fields = ('nombre',  'Artista','Genero', 'fecha_publicacion','duracion',)
 
 class VocalistaForm(forms.ModelForm):
     nombre = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
