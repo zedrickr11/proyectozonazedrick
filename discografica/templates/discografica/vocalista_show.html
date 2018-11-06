@@ -1,0 +1,20 @@
+{% extends 'discografica/base.html' %}
+{% block ac1 %}active{% endblock %}
+{% block titulo %} Vocalista {% endblock %}
+
+{% block content %}
+<div class="span12">
+  <p><strong>Nombre:</strong> {{ v.nombre }}</p>
+  <p><strong>Apellido:</strong> {{ v.apellido }}</p>
+  <p><strong>Fecha de nacimiento:</strong> {{ v.fecha_nacimiento }}</p>
+  <p><strong>Recidencia:</strong> {{ v.residencia }}</p>
+  <p><strong>Email:</strong> {{ v.email }}</p>
+
+</div>
+<div class="span12">
+  <a href="{% url 'vocalista_index' %}" class="btn btn-default" ><i class=" icon-arrow-left"></i></a>
+  <a href="{% url 'vocalista_edit' pk=v.pk %}" class="btn btn-warning"><i class="icon-edit"></i></a>
+  <a href="{% url 'vocalista_remove' pk=v.pk %}"  class="btn btn-danger"><i class="icon-trash"></i></a>
+</div>
+  
+{% endblock %}

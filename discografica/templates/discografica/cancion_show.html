@@ -1,0 +1,27 @@
+{% extends 'discografica/base.html' %}
+{% block ac5 %}active{% endblock %}
+{% block titulo %} Canciones {% endblock %}
+{% block content %}
+<div class="span12">
+  <p><strong>Título:</strong>{{ c.titulo }}</p>
+  <p><strong>Álbum:</strong>{{ c.Album }}</p>
+  <p><strong>Número de pista:</strong>{{ c.num_pista }}</p>
+  <p><strong>Duración:</strong>{{ c.duracion }}</p>
+  <p><strong>Fecha de creación:</strong>{{ c.fecha_creacion }}</p>
+  <p><strong>Vocalistas:</strong>
+    {% for vocalistas in c.Vocalista.all %}
+    <ul class="list-group">
+      <li class="list-group-item">{{ vocalistas }}</li>
+    </ul>
+  {% endfor %}</p>
+
+
+
+</div>
+<div class="span12">
+  <a href="{% url 'cancion_index' %}" class="btn btn-default" ><i class=" icon-arrow-left"></i></a>
+  
+  <a href="{% url 'cancion_remove' pk=c.pk %}"  class="btn btn-danger"><i class="icon-trash"></i></a>
+</div>
+
+{% endblock %}

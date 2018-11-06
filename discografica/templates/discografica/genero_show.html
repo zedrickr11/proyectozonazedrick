@@ -1,0 +1,15 @@
+{% extends 'discografica/base.html' %}
+{% block ac3 %}active{% endblock %}
+{% block titulo %} Género {% endblock %}
+{% block content %}
+<div class="span12">
+  <p><strong>Género:</strong> {{ g.nombre }}</p>
+
+</div>
+<div class="span12">
+  <a href="{% url 'index_genero' %}" class="btn btn-default" ><i class=" icon-arrow-left"></i></a>
+  <a href="{% url 'genero_edit' pk=g.pk %}" class="btn btn-warning"><i class="icon-edit"></i></a>
+  <a href="{% url 'genero_remove' pk=g.pk %}"  class="btn btn-danger"><i class="icon-trash"></i></a>
+</div>
+
+{% endblock %}

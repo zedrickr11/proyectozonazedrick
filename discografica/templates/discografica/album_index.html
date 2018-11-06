@@ -1,0 +1,53 @@
+{% extends 'discografica/base.html' %}
+{% block ac4 %}active{% endblock %}
+{% block titulo %} Album {% endblock %}
+  {% block content %}
+  <h1>Álbum    <a href="{% url 'album_new' %}" rel="tooltip" data-original-title="Agregar" class="btn btn-success "><i class="icon-plus"></i></a></h1>
+  <hr>
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+          <h5>Álbum </h5>
+        </div>
+        <div class="widget-content nopadding">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Álbum</th>
+                <th>Artista</th>
+                <th>Género</th>
+                <th>Fecha de publicación</th>
+                <th>Opciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for a in alb %}
+                <tr>
+                  <td>{{ a.nombre }}</td>
+                  <td>{{ a.Artista }}</td>
+                  <td>{{ a.Genero }}</td>
+                  <td>{{ a.fecha_publicacion }}</td>
+                  <td>
+                    <a href="{% url 'album_show' pk=a.pk %}" rel="tooltip"  class="btn btn-info btn-simple btn-xs" data-original-title="Detalles" >
+                      <i class="icon-exclamation-sign"></i>
+                    </a>
+                    <a href="{% url 'album_edit' pk=a.pk %}" rel="tooltip" class="btn btn-warning btn-simple btn-xs" data-original-title="Editar">
+                      <i class="icon-edit"></i>
+                    </a>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+</div>
+</div>
+
+
+
+
+
+
+  {% endblock content %}

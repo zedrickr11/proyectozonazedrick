@@ -1,0 +1,17 @@
+{% extends 'discografica/base.html' %}
+{% block ac2 %}active{% endblock %}
+{% block titulo %} Artista {% endblock %}
+{% block content %}
+<div class="span12">
+  <p><strong>Artista:</strong> {{ a.nombre }}</p>
+
+  <p><strong>Fecha de inicio:</strong> {{ a.fecha_inicio }}</p>
+
+</div>
+<div class="span12">
+  <a href="{% url 'artista_index' %}" class="btn btn-default" ><i class=" icon-arrow-left"></i></a>
+  <a href="{% url 'artista_edit' pk=a.pk %}" class="btn btn-warning"><i class="icon-edit"></i></a>
+  <a href="{% url 'artista_remove' pk=a.pk %}"  class="btn btn-danger"><i class="icon-trash"></i></a>
+</div>
+    
+{% endblock %}

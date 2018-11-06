@@ -1,0 +1,11 @@
+{% extends 'discografica/base.html' %}
+{% block ac5 %}active{% endblock %}
+{% block titulo %} Canciones {% endblock %}
+
+    {% block content %}
+        <h1>Nueva canción</h1>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ formulario.as_p }}
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </form>
+    {% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'discografica/base.html' %}
+{% block ac4 %}active{% endblock %}
+{% block titulo %} Album {% endblock %}
+{% block content %}
+
+
+
+    <div class="span12">
+      <p><strong>Álbum:</strong> {{ a.nombre }}</p>
+      <p><strong>Autor:</strong> {{ a.autor }}</p>
+      <p><strong>Artista:</strong> {{ a.Artista }}</p>
+      <p><strong>Género:</strong> {{ a.Genero }}</p>
+      <p><strong>Fecha de creación:</strong> {{ a.fecha_creacion }}</p>
+      <p><strong>Fecha de publicación:</strong> {{ a.fecha_publicacion }}</p>
+      <p><strong>Duración:</strong> {{ a.duracion }}</p>
+    </div>
+    <div class="span12">
+      <a href="{% url 'album_index' %}" class="btn btn-default" ><i class=" icon-arrow-left"></i></a>
+      <a href="{% url 'album_edit' pk=a.pk %}" class="btn btn-warning"><i class="icon-edit"></i></a>
+      <a href="{% url 'album_remove' pk=a.pk %}"  class="btn btn-danger"><i class="icon-trash"></i></a>
+    </div>
+{% endblock %}
